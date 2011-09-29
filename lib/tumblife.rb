@@ -18,7 +18,7 @@ class Tumblife
   end
 
   def api_key
-    {api_key: @access_token.consumer.key}
+    {:api_key => @access_token.consumer.key}
   end
 
   def self.api_settings

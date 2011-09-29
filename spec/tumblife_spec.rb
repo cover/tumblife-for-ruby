@@ -10,7 +10,7 @@ describe Tumblife do
 
   context :api do
     it 'should respond to info' do
-      @client.should_receive(:get).with('/v2/blog/mitukiii.tumblr.com/info', api_key: @api_key)
+      @client.should_receive(:get).with('/v2/blog/mitukiii.tumblr.com/info', :api_key => @api_key)
       @client.info 'mitukiii.tumblr.com'
     end
 
@@ -29,9 +29,9 @@ describe Tumblife do
     end
 
     it 'should respond to posts' do
-      @client.should_receive(:get).with('/v2/blog/mitukiii.tumblr.com/posts', api_key: @api_key)
+      @client.should_receive(:get).with('/v2/blog/mitukiii.tumblr.com/posts', :api_key => @api_key)
       @client.posts 'mitukiii.tumblr.com'
-      @client.should_receive(:get).with('/v2/blog/mitukiii.tumblr.com/posts', api_key: @api_key, type: :photo)
+      @client.should_receive(:get).with('/v2/blog/mitukiii.tumblr.com/posts', :api_key => @api_key, type: :photo)
       @client.posts 'mitukiii.tumblr.com', type: :photo
     end
 

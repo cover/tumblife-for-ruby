@@ -54,7 +54,7 @@ class Tumblife
         send http_method, path % args, params
       end
     else
-      define_method method_name do |params = {}|
+      define_method method_name do |params|
         send http_method, path, params
       end
     end
